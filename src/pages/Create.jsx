@@ -18,7 +18,7 @@ const Create = () => {
   }
 
   return (
-    <div className='flex justify-center items-center w-full  '>
+    <div className='flex justify-center items-center w-full h-[100vh] '>
       <form onSubmit={handleSubmit(SubmitHandler)} className='w-1/2  m-auto flex-col items-center justify-center text-center p-5'>
         <h1 className='text-md font-medium'>Create a new recipe</h1>
         <input className='p-2 border-b block outline-0  w-[80%]'
@@ -42,7 +42,7 @@ const Create = () => {
 
         <textarea className='p-2 border-b block outline-0 w-[80%]'
           {...register("ingredients")}
-          placeholder='weite  recipe Ingredients seperated by ,' />
+          placeholder='write  recipe Ingredients seperated by ,' />
 
         <textarea className='p-2 border-b block outline-0 w-[80%]'
           {...register("instructions")}
