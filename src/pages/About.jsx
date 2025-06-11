@@ -29,9 +29,9 @@ const About = () => {
             { name: 'Developer Vishal', role: 'Tech Lead', bio: 'I M a Developer', link:"https://www.instagram.com/0._vishal?igsh=MTgwaWtkajd5ZHRnNQ%3D%3D" },
             { name: 'Designer Changu', role: 'UI Expert', bio: 'I can design anything', link:"https://www.instagram.com/_0.ch1_?utm_source=ig_web_button_share_sheet&igsh=MTd0bWtwNjEwMHBmMQ==" }
           ].map((member) => (
-            <NavLink to={member.link} key={member.name} className="bg-gray-800 p-6 rounded-lg">
+            <NavLink to={member.link} target='_blank' key={member.name} className="bg-gray-800 p-6 rounded-lg">
               <img 
-                src="src/assets/Sheryians_Logo_wFKd9VClG.png" 
+                src="src/assets/seriyans.png" 
                 alt={member.name}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
