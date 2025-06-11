@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { recipecontext } from '../context/RecipeContext';
+import { NavLink } from 'react-router-dom';
 
 const About = () => {
+  const { data }=useContext(recipecontext)
   return (
     <div className="about-page p-6 max-w-6xl mx-auto">
       <section className="hero bg-gray-800 rounded-lg p-8 mb-8">
@@ -22,20 +25,20 @@ const About = () => {
         <h2 className="text-3xl font-semibold mb-6">Meet the Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { name: 'Chef Alice', role: 'Head of Recipes', bio: '...' },
-            { name: 'Developer Bob', role: 'Tech Lead', bio: '...' },
-            { name: 'Designer Carol', role: 'UI Expert', bio: '...' }
+            { name: 'Chef Dhanesh', role: 'Head of Recipes', bio: 'Cook🙂 - i cooked this everthing', link:"https://www.instagram.com/master.dhanesh?utm_source=ig_web_button_share_sheet&igsh=MXRkeG5uamJkZ2ZhZA==" },
+            { name: 'Developer Vishal', role: 'Tech Lead', bio: 'I M a Developer', link:"https://www.instagram.com/0._vishal?igsh=MTgwaWtkajd5ZHRnNQ%3D%3D" },
+            { name: 'Designer Changu', role: 'UI Expert', bio: 'I can design anything', link:"https://www.instagram.com/_0.ch1_?utm_source=ig_web_button_share_sheet&igsh=MTd0bWtwNjEwMHBmMQ==" }
           ].map((member) => (
-            <div key={member.name} className="bg-gray-800 p-6 rounded-lg">
+            <NavLink to={member.link} key={member.name} className="bg-gray-800 p-6 rounded-lg">
               <img 
-                src="/src/assets/team-member.jpg" 
+                src="src/assets/Sheryians_Logo_wFKd9VClG.png" 
                 alt={member.name}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
               <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
               <p className="text-gray-400 mb-2">{member.role}</p>
               <p className="text-gray-300 text-sm">{member.bio}</p>
-            </div>
+            </NavLink>
           ))}
         </div>
       </section>
@@ -43,10 +46,10 @@ const About = () => {
       <section className="stats bg-gray-800 p-6 rounded-lg">
         <h2 className="text-2xl font-semibold mb-4">By the Numbers</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <StatItem label="Recipes Shared" value="1,000+" />
-          <StatItem label="Active Users" value="500+" />
-          <StatItem label="Countries" value="50+" />
-          <StatItem label="Team Members" value="10+" />
+          <StatItem label="Recipes Shared" value={data.length + '+'}/>
+          <StatItem label="Active Users" value= {data.length + 5} />
+          <StatItem label="Countries" value="2+" />
+          <StatItem label="Team Members" value="5+" />
         </div>
       </section>
     </div>

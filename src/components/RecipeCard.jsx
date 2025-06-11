@@ -1,24 +1,39 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const RecipeCard = (props) => {
-    
-    const {id , title , chef , image, discription, ingredients , instructions} = props.recipe
+const RecipeCard = ({ recipe }) => {
+  const { id, title, chef, image, discription } = recipe;
+
   return (
-    <Link className='hover:scale-101 duration-100 block w-1/4  rounded-md overflow-hidden shadow shadow-gray-400 p-2' key={props.keyId}
-    to={`/recipes/details/${id}`}
+    <Link
+      to={`/recipes/details/${id}`}
+      className="group block bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 w-1/4"
     >
-      <img src={image} alt="" className='w-full h-[25vh] object-cover rounded-md'/>
-      <h1 className='font-black text-md py-[2px] '>{title}</h1>
-        <small className='text-pink-500 mb-2'>{chef}</small>
-        <p>
-            {discription.slice(0 , 100)}...{" "}
-            <small className='text-sm text-blue-500 mb-2 py-1'>more</small>
-         </p>
+      <div className="relative ">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-[30vh] object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
 
-     
-      </Link>
-  )
-}
+      <div className="p-4">
+        <h3 className="text-xl font-bold mb-2 truncate">{title}</h3>
+        <p className="text-sm text-yellow-500 font-medium mb-3">By {chef}</p>
+        
+        <div className="text-gray-300 text-sm mb-4 h-20 overflow-hidden relative">
+          {discription.slice(0, 100)}
+          <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-gray-800" />
+        </div>
 
-export default RecipeCard
+        <div className="flex justify-between items-center text-blue-400 text-sm">
+          <span className="hover:text-blue-300 transition-colors">
+            View Recipe →
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export default RecipeCard;

@@ -8,7 +8,7 @@ const Recipes = () => {
     return <RecipeCard key={recipe.id} keyId = { recipe.id} recipe={recipe}/>
   })
   return (
-    <div className='flex gap-5 flex-wrap justify-start '>
+    <div className='flex gap-5 flex-wrap justify-center p-5'>
       {data.length  > 0 ? renderRecipes : "No recipes are there"}
     </div>
   )
