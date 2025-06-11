@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { recipecontext } from '../context/RecipeContext';
 import { NavLink } from 'react-router-dom';
+import seriyans  from '../assets/seriyans.png'
 
 const About = () => {
   const { data }=useContext(recipecontext)
@@ -31,7 +32,7 @@ const About = () => {
           ].map((member) => (
             <NavLink to={member.link} target='_blank' key={member.name} className="bg-gray-800 p-6 rounded-lg">
               <img 
-                src="src/assets/seriyans.png" 
+                src={seriyans} 
                 alt={member.name}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
